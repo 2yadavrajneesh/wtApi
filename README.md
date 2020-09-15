@@ -21,8 +21,8 @@ WTAPI is Flask based Api.
 
 	- For List data from Database[GET]:-
 	
-		http://127.0.0.1:5000/listintent/YourId
+			http://127.0.0.1:5000/listintent/YourId
 
 	- For Update data in Database[PATCH]:-
 	
-		http://127.0.0.1:5000/updateintent/YourID?FieldName=Value
+			http://127.0.0.1:5000/updateintent/YourID?FieldName=Value

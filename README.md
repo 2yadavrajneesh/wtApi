@@ -1,4 +1,4 @@
-#WTAPI
+# WTAPI
 
 WTAPI is Flask based Api.
 
@@ -16,10 +16,13 @@ WTAPI is Flask based Api.
 
 1. Then enter these command in url bar:-
 	- For create data in Database[PUT]:-
+	
     		http://127.0.0.1:5000/createintent/YourID?name=Your&position=PositionName&experience=ExperienceInYear
 
 	- For List data from Database[GET]:-
-		    http://127.0.0.1:5000/listintent/YourId
+	
+		http://127.0.0.1:5000/listintent/YourId
 
-	- For Update data in Database[PATCH]:
-		    http://127.0.0.1:5000/updateintent/YourID?FieldName=Value
+	- For Update data in Database[PATCH]:-
+	
+		http://127.0.0.1:5000/updateintent/YourID?FieldName=Value

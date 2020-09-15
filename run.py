@@ -18,6 +18,8 @@ class IntentModel(db.Model):
         # return '<User %r>' % self.name
         return f'CreateIntent(name={name}, position={position}, experience={experience})'
 
+# db.create_all()
+
 intent_put_args = reqparse.RequestParser()
 intent_put_args.add_argument("name", type=str, help="Name of Intents is Required", required=True)
 intent_put_args.add_argument("position", type=str, help="Position of Intents is Required", required=True)

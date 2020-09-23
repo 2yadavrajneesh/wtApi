@@ -120,6 +120,7 @@ resources_fields_bot = {
 
 
 # Comment after first initialization
+
 # db.create_all()
 
 
@@ -141,19 +142,19 @@ class CreateIntents(Resource):
             bot_id=args['bot_id']
         )
 
-        pathnlu = str(args['bot_id']) + "/nlu.md"  # 999/nlu.md
-
-        print("Bot id is", args['bot_id'])
-        if str(path.exists(pathnlu)):
-            f = open(pathnlu, "a")
-            f.write("* ")
-            f.write(args['intent_name'])
-            f.write("\n")
-            f.write("-  ")
-            f.write(args['intent_description'])
-            f.close()
-        else:
-            abort(409, message="Bot Doesn't Exist")
+        # pathnlu = str(args['bot_id']) + "/nlu.md"  # 999/nlu.md
+        #
+        # print("Bot id is", args['bot_id'])
+        # if str(path.exists(pathnlu)):
+        #     f = open(pathnlu, "a")
+        #     f.write("* ")
+        #     f.write(args['intent_name'])
+        #     f.write("\n")
+        #     f.write("-  ")
+        #     f.write(args['intent_description'])
+        #     f.close()
+        # else:
+        #     abort(409, message="Bot Doesn't Exist")
 
         db.session.add(intent)
         db.session.commit()
@@ -239,15 +240,19 @@ class CreateBot(Resource):
             print("Directory ", dirName, " Created ")
 
             # sample_bot = os.path.dirname('./sample_bot')
-            for filename in glob.glob(os.path.join("sample_bot", '*.*')):
-                shutil.copy(filename, dirName)
 
-            # source_dir = 'sample_bot'
-            #
-            # file_names = os.listdir(source_dir)
-            #
-            # for file_name in file_names:
-            #     shutil.copy(os.path.join(source_dir, file_name), dirName)
+            for root, dirs, files in os.walk('sample_bot'):
+                for file in files:
+
+                    path_file = os.path.join(root, file)
+                    shutil.copy2(path_file, dirName)
+
+            directory = 'data'
+            path = os.path.join(dirName, directory)
+            os.mkdir(path)
+
+            for filename in glob.glob(os.path.join(dirName,'*.md')):
+                shutil.move(filename, path)
 
         except FileExistsError:
             print("Directory ", dirName, " already exists")
@@ -281,7 +286,6 @@ api.add_resource(UpdateIntent, "/updateintent/<int:intent_id>")
 
 # Add logic to deploy bot action, rasa --endpoint for the new bot or specific id
 # foreach bot actions and endpoints
-
 # api.add_resource(DeployBot, "/deploybot/<int:intent_id>")
 
 

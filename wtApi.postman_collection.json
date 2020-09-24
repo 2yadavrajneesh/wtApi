@@ -1,0 +1,139 @@
+{
+	"info": {
+		"_postman_id": "c413d328-d779-475f-9e52-ef237d319160",
+		"name": "wtApi",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "127.0.0.1:5000/createbot/2?bot_name=102",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "127.0.0.1:5000/createbot/2?bot_name=102",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"createbot",
+						"2"
+					],
+					"query": [
+						{
+							"key": "bot_name",
+							"value": "102"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:5000/createintent/1?name=Rajneesh&position=Developer&experience=2",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/createintent/1?name=Rajneesh&position=Developer&experience=2",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"createintent",
+						"1"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Rajneesh"
+						},
+						{
+							"key": "position",
+							"value": "Developer"
+						},
+						{
+							"key": "experience",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:5000/createintent/2",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/createintent/2",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"createintent",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:5000/createstories/2?story_name=say msoffice&intent_id=2&action_name=utter_office&bot_id=2",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/createstories/2?story_name=say msoffice&intent_id=2&action_name=utter_office&bot_id=2",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"createstories",
+						"2"
+					],
+					"query": [
+						{
+							"key": "story_name",
+							"value": "say msoffice"
+						},
+						{
+							"key": "intent_id",
+							"value": "2"
+						},
+						{
+							"key": "action_name",
+							"value": "utter_office"
+						},
+						{
+							"key": "bot_id",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

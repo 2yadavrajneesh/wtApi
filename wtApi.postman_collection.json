@@ -6,7 +6,7 @@
 	},
 	"item": [
 		{
-			"name": "127.0.0.1:5000/createbot/2?bot_name=102",
+			"name": "Create Bot",
 			"request": {
 				"method": "PUT",
 				"header": [],
@@ -34,12 +34,12 @@
 			"response": []
 		},
 		{
-			"name": "http://127.0.0.1:5000/createintent/1?name=Rajneesh&position=Developer&experience=2",
+			"name": "Create Intent",
 			"request": {
 				"method": "PUT",
 				"header": [],
 				"url": {
-					"raw": "http://127.0.0.1:5000/createintent/1?name=Rajneesh&position=Developer&experience=2",
+					"raw": "http://127.0.0.1:5000/createintents/1?intent_name=msoffice&intent_description=how msoffice works&bot_id=1",
 					"protocol": "http",
 					"host": [
 						"127",
@@ -49,21 +49,21 @@
 					],
 					"port": "5000",
 					"path": [
-						"createintent",
+						"createintents",
 						"1"
 					],
 					"query": [
 						{
-							"key": "name",
-							"value": "Rajneesh"
+							"key": "intent_name",
+							"value": "msoffice"
 						},
 						{
-							"key": "position",
-							"value": "Developer"
+							"key": "intent_description",
+							"value": "how msoffice works"
 						},
 						{
-							"key": "experience",
-							"value": "2"
+							"key": "bot_id",
+							"value": "1"
 						}
 					]
 				}
@@ -71,7 +71,7 @@
 			"response": []
 		},
 		{
-			"name": "http://127.0.0.1:5000/createintent/2",
+			"name": "List Intent By ID",
 			"request": {
 				"method": "GET",
 				"header": [],
@@ -94,7 +94,7 @@
 			"response": []
 		},
 		{
-			"name": "http://127.0.0.1:5000/createstories/2?story_name=say msoffice&intent_id=2&action_name=utter_office&bot_id=2",
+			"name": "Create Stories",
 			"request": {
 				"method": "PUT",
 				"header": [],

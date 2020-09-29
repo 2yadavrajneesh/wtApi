@@ -384,6 +384,7 @@ api.add_resource(CreateIntents, "/createintents/<int:intent_id>")
 api.add_resource(CreateStories, "/createstories/<int:story_id>")
 
 api.add_resource(TrainBot, "/trainbot/<int:bot_id>")
+api.add_resource(DeployBot, "/deploybot/<int:bot_id>")
 
 api.add_resource(ListIntent, "/listintent/<int:intent_id>")
 api.add_resource(UpdateIntent, "/updateintent/<int:intent_id>")

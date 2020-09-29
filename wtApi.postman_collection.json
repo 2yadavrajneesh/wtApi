@@ -76,7 +76,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://127.0.0.1:5000/listintent/1",
+					"raw": "http://127.0.0.1:5000/createintent/2",
 					"protocol": "http",
 					"host": [
 						"127",
@@ -155,6 +155,35 @@
 					"port": "5000",
 					"path": [
 						"trainbot",
+						"1"
+					],
+					"query": [
+						{
+							"key": "bot_name",
+							"value": "101"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Deploy Bot",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/deploybot/1?bot_name=101",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"deploybot",
 						"1"
 					],
 					"query": [

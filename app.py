@@ -356,6 +356,27 @@ class TrainBot(Resource):
         return result
 
 
+class DeployBot(Resource):
+    @marshal_with(resources_fields_bot)
+    def post(self, bot_id):
+        args = bot_post_args_bot.parse_args()
+        result = BotModel.query.filter_by(id=bot_id).first()
+        if not result:
+            abort(404, message="Bot Not Found")
+
+        bot = BotModel(id=bot_id, bot_name=args['bot_name'])
+
+        dirName = str(bot.bot_name)
+
+        try:
+            subprocess.call('rasa shell', shell=True, cwd=dirName)
+
+        except FileNotFoundError:
+            print("Directory ", dirName, " doesn't found")
+
+        return result
+
+
 # Add logic to deploy bot , execute rasa shell or rasa --endpoint
 
 api.add_resource(CreateBot, "/createbot/<int:bot_id>")

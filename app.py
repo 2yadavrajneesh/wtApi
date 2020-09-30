@@ -369,15 +369,13 @@ class DeployBot(Resource):
         dirName = str(bot.bot_name)
 
         try:
-            subprocess.call('rasa shell', shell=True, cwd=dirName)
+            subprocess.call('rasa actions', shell=True, cwd=dirName)
 
         except FileNotFoundError:
             print("Directory ", dirName, " doesn't found")
 
         return result
 
-
-# Add logic to deploy bot , execute rasa shell or rasa --endpoint
 
 api.add_resource(CreateBot, "/createbot/<int:bot_id>")
 api.add_resource(CreateIntents, "/createintents/<int:intent_id>")
@@ -388,10 +386,6 @@ api.add_resource(DeployBot, "/deploybot/<int:bot_id>")
 
 api.add_resource(ListIntent, "/listintent/<int:intent_id>")
 api.add_resource(UpdateIntent, "/updateintent/<int:intent_id>")
-
-# Add logic to deploy bot action, rasa --endpoint for the new bot or specific id
-# foreach bot actions and endpoints
-# api.add_resource(DeployBot, "/deploybot/<int:intent_id>")
 
 
 # Run Server

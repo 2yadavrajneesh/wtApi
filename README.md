@@ -24,7 +24,7 @@ In create bot you have to pass bot_id and bot_name.
 1. **Create Intent** :-
 In create intent you have to pass intent_id, intent_name, intent_description and bot_id (Which is you created first).
 
-1. ** List Intent By Id** :-
+1. **List Intent By Id** :-
 In list intent you have to pass just only intent_id.
 
 1. **Create Stories** :-
